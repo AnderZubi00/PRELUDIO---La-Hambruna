@@ -7,7 +7,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
         ///////////////////
 
         //Donuts con mas azucar
-        function donutConMasAzucar(data) {
+        function donutWithMoreSugar(data) {
             let maxSugar = 0;
             let nombre = "";
 
@@ -26,12 +26,12 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
             console.log("Donut con más azúcar es " + nombre + " con " + maxSugar + "g de azúcar.");
         }
 
-        donutConMasAzucar(data);
+        donutWithMoreSugar(data);
 
 
         //Donuts con mas hierro
 
-        function donutConMasHierro(data) {
+        function donutWithMoreIron(data) {
             let ironNumber;
             let maxHierro = 0;
             let nombre1;
@@ -53,12 +53,12 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         }
 
-        donutConMasHierro(data);
+        donutWithMoreIron(data);
 
 
         //Donuts con mas proteina
 
-        function donutConMasProteina(data) {
+        function donutWithMoreProtein(data) {
             let proteinNumber;
             let maxProteina = 0;
             let nombre;
@@ -80,11 +80,11 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         }
 
-        donutConMasProteina(data);
+        donutWithMoreProtein(data);
 
         //Donuts con menos fibra
 
-        function donutConMasFibra(data) {
+        function donutWithMoreFibre(data) {
             let fibraNumber;
             let minFibra = Infinity;
             let donutsMinFibra = [];
@@ -109,7 +109,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         }
 
-        donutConMasFibra(data);
+        donutWithMoreFibre(data);
 
 
         ////////////////////
@@ -154,7 +154,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         //Mostrar el porcentaje medio de cada vitamina
 
-        function calcularPorcentajeMedioVitaminas(data) {
+        function calculateAveragePercentageVitamins(data) {
             const vitaminTotals = {};
             const vitaminCounts = {};
 
@@ -188,7 +188,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
             }
         }
 
-        calcularPorcentajeMedioVitaminas(data);
+        calculateAveragePercentageVitamins(data);
 
 
         ////////////////////
@@ -199,7 +199,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
         console.log("\n");
         console.log("Masas de cada donuts: ");
 
-        function masasDonuts(donuts) {
+        function batterDonuts(donuts) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
                 console.log("Donut:" + donut.name);
@@ -213,7 +213,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
             }
         }
 
-        masasDonuts(data.items.item);
+        batterDonuts(data.items.item);
 
 
 
@@ -251,7 +251,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
         console.log("\n");
         console.log("Cuantos donuts de cada tipo podemos comprar:  ");
 
-        function calcularDonutsComprar(donuts, monedasDisponibles) {
+        function calculateByDonuts(donuts, monedasDisponibles) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
                 const precio = donut.ppu;
@@ -267,7 +267,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
         }
         const monedas = 4;
 
-        calcularDonutsComprar(data.items.item, monedas);
+        calculateByDonuts(data.items.item, monedas);
 
 
 
@@ -276,7 +276,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
         ///////////////////
 
         //Los donuts con el coresterol > 12 modificar las grasas trans a  3,2g
-        function actualizarGrasasTrans(donuts) {
+        function updateTransFats(donuts) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
                 const colesterol = donut.nutrition_facts.nutrition.cholesterol.amount;
@@ -287,7 +287,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
             }
         }
 
-        actualizarGrasasTrans(data.items.item);
+        updateTransFats(data.items.item);
 
         console.log("Actualizacion de grasas trans: ");
         for (let i = 0; i < data.items.item.length; i++) {
@@ -299,7 +299,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         //Donuts con azucar > 50 modificar el amount de los detalles de carbohidratos a 42g
 
-        function actualizarCarbohidratos(donuts) {
+        function updateCarbohydrates(donuts) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
                 const cantidadAzucar = donut.nutrition_facts.nutrition.carbohydrate.carbs_detail.type.sugars;
@@ -310,7 +310,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
             }
         }
 
-        actualizarCarbohidratos(data.items.item);
+        updateCarbohydrates(data.items.item);
 
         console.log("Actualizacion de carbohidratos: ");
         for (let i = 0; i < data.items.item.length; i++) {
@@ -323,7 +323,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
         //Añadir una vitamina llamada "Nitacina" al donut con el nomre "Magic Fusion"
 
 
-        function añadirVitamina(donuts, nombreDonut, nuevaVitamina) {
+        function addVitamin(donuts, nombreDonut, nuevaVitamina) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
 
@@ -339,7 +339,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
             percent: "1%"
         };
 
-        añadirVitamina(data.items.item, "Magic Fusion", nuevaVitamina);
+        addVitamin(data.items.item, "Magic Fusion", nuevaVitamina);
 
         console.log("Nueva vitamina llamada Nitacina: ");
         console.log(data.items.item[2].nutrition_facts.nutrition.vitamines);
@@ -348,14 +348,14 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         //El daily value de los carbohidratos de todos los donuts va a ser de 53%
 
-        function actualizarCarbohidratosDailyValue(donuts, nuevoDailyValue) {
+        function updateCarbsDailyValue(donuts, nuevoDailyValue) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
 
                 donut.nutrition_facts.nutrition.carbohydrate.daily_value = nuevoDailyValue;
             }
         }
-        actualizarCarbohidratosDailyValue(data.items.item, "53%");
+        updateCarbsDailyValue(data.items.item, "53%");
 
         console.log("Actualizacion el daily value de todos los carbohidratos: ");
         for (let i = 0; i < data.items.item.length; i++) {
@@ -367,7 +367,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         //Crearle un nuevo atributo "Alergen" al donut llamado "Relaxing Alchemy" y que dentro de el ponga "Gluten Free "
 
-        function añadirAlergen(donuts, nombreDonut, nuevoAlergen) {
+        function addAlergen(donuts, nombreDonut, nuevoAlergen) {
             for (let i = 0; i < donuts.length; i++) {
                 const donut = donuts[i];
 
@@ -381,7 +381,7 @@ fetch('https://gist.githubusercontent.com/Oskar-Dam/62e7175dc542af53a9d18cb29242
 
         const nuevoAlergen = "Gluten Free";
 
-        añadirAlergen(data.items.item, "Relaxing Alchemy", nuevoAlergen);
+        addAlergen(data.items.item, "Relaxing Alchemy", nuevoAlergen);
 
         console.log("Nuevo atributo Alergen en el donut Relaxing Alchemy: ");
         console.log(data.items.item[4]);
